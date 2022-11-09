@@ -1,0 +1,64 @@
+2022-11-09 21:41:16,782 INFO initializing Raft sub-system
+
+2022-11-09 21:41:16,782 INFO Upgrade from 1X feature has closed, If you want open this feature, please set `nacos.core.support.upgrade.from.1x=true` in application.properties
+
+2022-11-09 21:41:18,724 INFO Raft group naming_persistent_service has leader null
+
+2022-11-09 21:41:19,362 INFO Raft group naming_persistent_service has leader 192.168.88.1:7848
+
+2022-11-09 21:41:36,581 INFO initializing Raft sub-system
+
+2022-11-09 21:41:36,581 INFO Upgrade from 1X feature has closed, If you want open this feature, please set `nacos.core.support.upgrade.from.1x=true` in application.properties
+
+2022-11-09 21:41:38,422 INFO Raft group naming_persistent_service has leader null
+
+2022-11-09 21:41:38,874 INFO Raft group naming_persistent_service has leader 192.168.88.1:7848
+
+2022-11-09 21:41:38,886 INFO add listener: com.alibaba.nacos.naming.domains.meta.
+
+2022-11-09 21:42:40,992 INFO initializing Raft sub-system
+
+2022-11-09 21:42:40,992 INFO Upgrade from 1X feature has closed, If you want open this feature, please set `nacos.core.support.upgrade.from.1x=true` in application.properties
+
+2022-11-09 21:42:42,836 INFO Raft group naming_persistent_service has leader null
+
+2022-11-09 21:42:43,276 INFO Raft group naming_persistent_service has leader 192.168.88.1:7848
+
+2022-11-09 21:42:43,279 INFO add listener: com.alibaba.nacos.naming.domains.meta.
+
+2022-11-09 21:50:40,831 INFO initializing Raft sub-system
+
+2022-11-09 21:50:40,831 INFO Upgrade from 1X feature has closed, If you want open this feature, please set `nacos.core.support.upgrade.from.1x=true` in application.properties
+
+2022-11-09 21:50:42,657 INFO Raft group naming_persistent_service has leader null
+
+2022-11-09 21:50:43,096 INFO Raft group naming_persistent_service has leader 192.168.88.1:7848
+
+2022-11-09 21:50:43,102 INFO add listener: com.alibaba.nacos.naming.domains.meta.
+
+2022-11-09 21:52:30,178 INFO initializing Raft sub-system
+
+2022-11-09 21:52:30,178 INFO Upgrade from 1X feature has closed, If you want open this feature, please set `nacos.core.support.upgrade.from.1x=true` in application.properties
+
+2022-11-09 21:52:31,920 INFO Raft group naming_persistent_service has leader null
+
+2022-11-09 21:52:32,357 INFO Raft group naming_persistent_service has leader 192.168.88.1:7848
+
+2022-11-09 21:52:32,363 INFO add listener: com.alibaba.nacos.naming.domains.meta.
+
+2022-11-09 21:54:17,687 INFO initializing Raft sub-system
+
+2022-11-09 21:54:17,687 INFO Upgrade from 1X feature has closed, If you want open this feature, please set `nacos.core.support.upgrade.from.1x=true` in application.properties
+
+2022-11-09 21:54:17,786 INFO add listener: com.alibaba.nacos.naming.domains.meta.
+
+2022-11-09 21:54:22,042 INFO add listener: com.alibaba.nacos.naming.domains.meta.00-00---000-NACOS_SWITCH_DOMAIN-000---00-00
+
+2022-11-09 21:54:22,686 WARN start to close old raft protocol!!!
+
+2022-11-09 21:54:22,686 WARN stop old raft protocol task for notifier
+
+2022-11-09 21:54:22,686 WARN clean old cache datum for old raft
+
+2022-11-09 21:54:22,686 WARN start to move old raft protocol metadata
+

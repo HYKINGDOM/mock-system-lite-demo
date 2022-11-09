@@ -1,0 +1,12 @@
+spring:
+    application:
+        name: meta-consumer
+    cloud:
+        nacos:
+            discovery:
+                namespace: public
+                server-addr: 127.0.0.1:8848
+                password: nacos
+                username: nacos
+server:
+    port: 8090

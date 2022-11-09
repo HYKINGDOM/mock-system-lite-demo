@@ -90,3 +90,11 @@
 
 2022-11-09 22:40:11,666 INFO Client connection 192.168.31.154:58646#true disconnect, remove instances and subscribers
 
+2022-11-09 22:40:55,627 WARN namespace : public, [DEFAULT_GROUP@@meta-consumer] services are automatically cleaned
+
+2022-11-09 22:40:55,627 WARN namespace : public, [DEFAULT_GROUP@@meta-admin] services are automatically cleaned
+
+2022-11-09 22:43:53,217 WARN [NamingServerHttpClientManager] Start destroying HTTP-Client
+
+2022-11-09 22:43:53,231 WARN [NamingServerHttpClientManager] Destruction of the end
+

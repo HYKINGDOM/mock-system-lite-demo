@@ -1,0 +1,52 @@
+2022-11-09 21:01:57,622 INFO Current addressing mode selection : AddressServerMemberLookup
+
+2022-11-09 21:02:08,710 ERROR [serverlist] exception, error : caused: jmenv.tbsite.net;
+
+2022-11-09 21:02:08,711 ERROR [serverlist] exception, error : caused: jmenv.tbsite.net;
+
+2022-11-09 21:02:08,711 ERROR [serverlist] exception, error : caused: jmenv.tbsite.net;
+
+2022-11-09 21:02:08,711 ERROR [serverlist] exception, error : caused: jmenv.tbsite.net;
+
+2022-11-09 21:02:08,712 ERROR [serverlist] exception, error : caused: jmenv.tbsite.net;
+
+2022-11-09 21:36:53,634 INFO Current addressing mode selection : AddressServerMemberLookup
+
+2022-11-09 21:37:04,717 ERROR [serverlist] exception, error : caused: jmenv.tbsite.net;
+
+2022-11-09 21:37:04,718 ERROR [serverlist] exception, error : caused: jmenv.tbsite.net;
+
+2022-11-09 21:37:04,718 ERROR [serverlist] exception, error : caused: jmenv.tbsite.net;
+
+2022-11-09 21:37:04,718 ERROR [serverlist] exception, error : caused: jmenv.tbsite.net;
+
+2022-11-09 21:37:04,719 ERROR [serverlist] exception, error : caused: jmenv.tbsite.net;
+
+2022-11-09 21:40:47,341 INFO Current addressing mode selection : AddressServerMemberLookup
+
+2022-11-09 21:40:58,455 ERROR [serverlist] exception, error : caused: jmenv.tbsite.net;
+
+2022-11-09 21:40:58,456 ERROR [serverlist] exception, error : caused: jmenv.tbsite.net;
+
+2022-11-09 21:40:58,456 ERROR [serverlist] exception, error : caused: jmenv.tbsite.net;
+
+2022-11-09 21:40:58,456 ERROR [serverlist] exception, error : caused: jmenv.tbsite.net;
+
+2022-11-09 21:40:58,456 ERROR [serverlist] exception, error : caused: jmenv.tbsite.net;
+
+2022-11-09 21:41:16,725 INFO Current addressing mode selection : FileConfigMemberLookup
+
+2022-11-09 21:41:36,530 INFO Current addressing mode selection : FileConfigMemberLookup
+
+2022-11-09 21:42:40,943 INFO Current addressing mode selection : FileConfigMemberLookup
+
+2022-11-09 21:50:40,779 INFO Current addressing mode selection : FileConfigMemberLookup
+
+2022-11-09 21:52:30,131 INFO Current addressing mode selection : FileConfigMemberLookup
+
+2022-11-09 21:54:17,635 INFO Current addressing mode selection : StandaloneMemberLookup
+
+2022-11-09 21:54:22,203 WARN [ClusterRpcClientProxy] success to refresh cluster rpc client on start up,members =[] 
+
+2022-11-09 21:54:27,410 INFO This node is ready to provide external services
+
