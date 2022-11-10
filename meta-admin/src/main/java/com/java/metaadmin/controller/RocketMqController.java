@@ -7,6 +7,7 @@ import com.java.metaadmin.domian.RocketMqMessage;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.rocketmq.client.producer.SendResult;
 import org.apache.rocketmq.spring.core.RocketMQTemplate;
+import org.apache.rocketmq.spring.support.RocketMQHeaders;
 import org.springframework.messaging.Message;
 import org.springframework.messaging.support.MessageBuilder;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -44,15 +45,15 @@ public class RocketMqController {
         // SendResult sendResult = rocketMqTemplate.syncSend(destination, message);
 
         /// 发送时指定业务key
-        /*Message<RocketMqMessage> buildMessage = MessageBuilder.withPayload(message)
+        Message<RocketMqMessage> buildMessage = MessageBuilder.withPayload(message)
                 // 设置keys
                 .setHeader(RocketMQHeaders.KEYS, message.getId())
                 .build();
-        SendResult sendResult = rocketMqTemplate.syncSend(destination, buildMessage);*/
+        SendResult sendResult = rocketMqTemplate.syncSend(destination, buildMessage);
 
         /// 发送延迟消息
-        Message<RocketMqMessage> buildMessage = MessageBuilder.withPayload(message).build();
-        SendResult sendResult = rocketMqTemplate.syncSend(destination, buildMessage, 3000, RocketMqDelayLevel.FIVE_SECOND);
+//        Message<RocketMqMessage> buildMessage = MessageBuilder.withPayload(message).build();
+//        SendResult sendResult = rocketMqTemplate.syncSend(destination, buildMessage, 3000, RocketMqDelayLevel.FIVE_SECOND);
 
         /// 发送同步有序消息，需要指定hashKey，可以用业务唯一键
         // rocketMqTemplate.syncSendOrderly(destination, message, message.getId().toString());
