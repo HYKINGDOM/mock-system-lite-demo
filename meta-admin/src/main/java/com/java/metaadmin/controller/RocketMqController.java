@@ -2,7 +2,6 @@ package com.java.metaadmin.controller;
 
 import com.alibaba.fastjson.JSONObject;
 import com.java.metaadmin.config.RocketMqBizConstant;
-import com.java.metaadmin.config.RocketMqDelayLevel;
 import com.java.metaadmin.domian.RocketMqMessage;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.rocketmq.client.producer.SendResult;
@@ -32,13 +31,11 @@ public class RocketMqController {
     public Object sendMessage() {
         // 目的：topic:tag，如果不指定则发往配置的默认地址
         String destination = RocketMqBizConstant.SOURCE_TOPIC + ":" + RocketMqBizConstant.SOURCE_TAG;
-        RocketMqMessage message = new RocketMqMessage();
-        message.setId(System.currentTimeMillis());
-        message.setMessage("当前消息发送时间为：" + LocalDateTime.now());
-        // Java时间字段需要单独处理，否则会序列化失败
-        message.setCurrentDate(LocalDate.now());
-        message.setCurrentDateTime(LocalDateTime.now());
-        message.setVersion("1.0");
+        RocketMqMessage message = RocketMqMessage.builder().id(System.currentTimeMillis()).message("当前消息发送时间为：" + LocalDateTime.now())
+                // Java时间字段需要单独处理，否则会序列化失败
+                .currentDate(LocalDate.now())
+                .currentDateTime(LocalDateTime.now())
+                .version("1.0").build();
 
         /// 发送同步消息，消息成功发送到Broker时才返回，message可以入参批量消息
         // 通过SendResult来处理发送结果

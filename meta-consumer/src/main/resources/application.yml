@@ -43,7 +43,7 @@ rocketmq:
             # key：group名称
             rocketmq_source_code_group:
                 # value：{key: topic名称: value: true/false}
-            rocketmq_source_code: true
+                rocketmq_source_code: true
         # 指定消费组
         group: spring_boot_consumer_group
         # 指定topic，启动时就会注册
