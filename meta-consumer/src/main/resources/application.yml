@@ -13,10 +13,10 @@ server:
 
 rocketmq:
     # 多个NameServer，host:port;host:port，RocketMQProperties
-    name-server: www.tianxincoord.com:9876
+    name-server: 127.0.0.1:9876
     producer:
         # 发送同一类消息的设置为同一个group，保证唯一
-        group: springboot_producer_group
+        group: spring_boot_producer_group
         # 发送消息失败重试次数，默认2
         retryTimesWhenSendFailed: 2
         # 异步消息重试此处，默认2
@@ -45,7 +45,7 @@ rocketmq:
                 # value：{key: topic名称: value: true/false}
             rocketmq_source_code: true
         # 指定消费组
-        group: springboot_consumer_group
+        group: spring_boot_consumer_group
         # 指定topic，启动时就会注册
         #topic: springboot_consumer_xxx
         # 一次拉取消息最大值，注意是拉取消息的最大值而非消费最大值
