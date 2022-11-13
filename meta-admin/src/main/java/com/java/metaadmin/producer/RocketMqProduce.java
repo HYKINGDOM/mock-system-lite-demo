@@ -1,19 +1,15 @@
 package com.java.metaadmin.producer;
 
 import com.alibaba.fastjson.JSON;
-import com.java.metaadmin.config.CommonConstant;
+import com.alibaba.fastjson.JSONObject;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.rocketmq.client.producer.SendCallback;
 import org.apache.rocketmq.client.producer.SendResult;
 import org.apache.rocketmq.spring.core.RocketMQTemplate;
-import org.apache.rocketmq.spring.support.RocketMQHeaders;
-import org.slf4j.MDC;
 import org.springframework.messaging.Message;
 import org.springframework.messaging.support.MessageBuilder;
 import org.springframework.stereotype.Component;
-
-import javax.annotation.Resource;
 
 /**
  * 消息的生产者
@@ -29,6 +25,7 @@ public class RocketMqProduce {
 
     /**
      * 发送消息并没有返回值
+     *
      * @param topic
      * @param tag
      * @param object
@@ -36,17 +33,16 @@ public class RocketMqProduce {
     public void convertAndSend(String topic, String tag, Object object) {
         String destination = topic + ":" + tag;
 
-        Message<Object> buildMessage = MessageBuilder.withPayload(object)
-                // 在header重视设置traceID
-                .setHeader(RocketMQHeaders.KEYS, MDC.get(CommonConstant.DEFAULT_TRACE_ID))
-                .setHeader(CommonConstant.DEFAULT_TRACE_ID, MDC.get(CommonConstant.DEFAULT_TRACE_ID)).build();
+        Message<Object> buildMessage = MessageBuilder.withPayload(object).build();
+        // 在header重视设置traceID
 
-        rocketMessageTemplate.convertAndSend(destination, buildMessage);
+        rocketMessageTemplate.convertAndSend(destination, object);
         log.info("destination = {},convertAndSend", destination);
     }
 
     /**
      * 同步消息
+     *
      * @param topic
      * @param tag
      * @param object
@@ -54,18 +50,15 @@ public class RocketMqProduce {
     public void syncSend(String topic, String tag, Object object) {
         String destination = topic + ":" + tag;
         long timeout = 100L;
+        Message<Object> buildMessage = MessageBuilder.withPayload(object).build();
 
-        Message<Object> buildMessage = MessageBuilder.withPayload(object)
-                // 在header重视设置traceID
-                .setHeader(RocketMQHeaders.KEYS, MDC.get(CommonConstant.DEFAULT_TRACE_ID))
-                .setHeader(CommonConstant.DEFAULT_TRACE_ID, MDC.get(CommonConstant.DEFAULT_TRACE_ID)).build();
-
-        SendResult result = rocketMessageTemplate.syncSend(destination, buildMessage, timeout);
-        log.info("destination = {},syncSend sendStatus = {}", destination, result.getSendStatus());
+        SendResult result = rocketMessageTemplate.syncSend(destination, object, timeout);
+        log.info("destination = {},syncSend sendStatus = {}", destination, JSONObject.toJSON(result));
     }
 
     /**
      * 异步消息
+     *
      * @param topic
      * @param tag
      * @param object

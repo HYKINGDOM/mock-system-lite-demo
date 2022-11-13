@@ -6,9 +6,9 @@
 	<property name="log.neverBlock" value="true" />
 
 	<property name="CONSOLE_LOG_PATTERN"
-			  value="%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level [%X{traceId}] %logger{50}.%method:%L - %msg%n" />
+			  value="%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level [%X{traceId}] [${app.name}] %logger{50}.%method:%L - %msg%n" />
 	<property name="FILE_LOG_PATTERN"
-			  value="%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level [%X{traceId}] %logger{50}.%method:%L - %msg%n" />
+			  value="%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level [%X{traceId}] [${app.name}] %logger{50}.%method:%L - %msg%n" />
 
 	<!--输出到控制台-->
 	<appender name="console" class="ch.qos.logback.core.ConsoleAppender">

@@ -1,8 +1,8 @@
 package com.java.metaadmin.controller;
 
 import com.alibaba.fastjson.JSONObject;
+import com.java.meta.common.domian.RocketMqMessage;
 import com.java.metaadmin.config.RocketMqBizConstant;
-import com.java.metaadmin.domian.RocketMqMessage;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.rocketmq.client.producer.SendResult;
 import org.apache.rocketmq.spring.core.RocketMQTemplate;

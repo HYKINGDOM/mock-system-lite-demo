@@ -14,13 +14,13 @@ import java.util.List;
 
 /**
  * 序列化器处理
+ * @author hy
  */
 @Configuration
 public class RocketMqConfig {
 
     /**
      * 解决RocketMQ Jackson不支持Java时间类型配置
-     * 源码参考：{@link org.apache.rocketmq.spring.autoconfigure.MessageConverterConfiguration}
      */
     @Bean
     @Primary
