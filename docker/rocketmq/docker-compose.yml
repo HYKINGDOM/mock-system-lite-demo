@@ -5,7 +5,7 @@ services:
     container_name: rocketmq-name-server
     environment:
       - "MAX_POSSIBLE_HEAP=100000000"
-      - "JAVA_OPTS= -server -Xms512m -Xmx512m -Xmn512m -XX:MetaspaceSize=128m -XX:MaxMetaspaceSize=320m"
+      - "JAVA_OPTS= -server -Xms1024m -Xmx1024m -Xmn1024m -XX:MetaspaceSize=512m -XX:MaxMetaspaceSize=320m"
     volumes:
       - ./docker/rocketmq/nameserver/logs:/root/logs
       - ./docker/rocketmq/nameserver/store:/root/store
@@ -43,6 +43,7 @@ services:
     image: pangliang/rocketmq-console-ng
     container_name: rocketmq-admin
     environment:
+      - "NAMESRV_ADDR=rocketmq-name-server:9876"
       - "JAVA_OPTS=-Drocketmq.namesrv.addr=rocketmq-name-server:9876 -Dcom.rocketmq.sendMessageWithVIPChannel=false"
     ports:
       - "8080:8080"
