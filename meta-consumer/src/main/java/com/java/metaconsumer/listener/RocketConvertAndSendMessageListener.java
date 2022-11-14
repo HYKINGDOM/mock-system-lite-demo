@@ -1,8 +1,8 @@
 package com.java.metaconsumer.listener;
 
 import com.alibaba.fastjson.JSONObject;
+import com.java.meta.common.constant.RocketMqBizConstant;
 import com.java.meta.common.domian.MessageObject;
-import com.java.metaconsumer.config.RocketMqBizConstant;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.rocketmq.spring.annotation.RocketMQMessageListener;
 import org.apache.rocketmq.spring.core.RocketMQListener;

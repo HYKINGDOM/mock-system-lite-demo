@@ -1,8 +1,8 @@
 package com.java.metaconsumer.listener;
 
 import com.alibaba.fastjson.JSONObject;
+import com.java.meta.common.constant.RocketMqBizConstant;
 import com.java.meta.common.domian.MessageObject;
-import com.java.metaconsumer.config.RocketMqBizConstant;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.rocketmq.spring.annotation.RocketMQMessageListener;
 import org.apache.rocketmq.spring.core.RocketMQReplyListener;
@@ -15,7 +15,12 @@ import java.util.concurrent.TimeUnit;
  */
 @Slf4j
 @Component
-@RocketMQMessageListener(topic = RocketMqBizConstant.SYNC_SOURCE_TOPIC, consumerGroup = RocketMqBizConstant.SOURCE_GROUP, selectorExpression = RocketMqBizConstant.SYNC_SOURCE_TAG)
+@RocketMQMessageListener(
+        topic = RocketMqBizConstant.SYNC_SOURCE_TOPIC,
+        consumerGroup = RocketMqBizConstant.SYNC_SOURCE_GROUP,
+        selectorExpression = RocketMqBizConstant.SYNC_SOURCE_TAG,
+        replyTimeout = 10000
+)
 public class RocketEntityReplyMessageListener implements RocketMQReplyListener<MessageObject, String> {
 
     /**

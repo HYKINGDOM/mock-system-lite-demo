@@ -1,8 +1,8 @@
 package com.java.metaconsumer.listener;
 
 import com.alibaba.fastjson.JSONObject;
+import com.java.meta.common.constant.RocketMqBizConstant;
 import com.java.meta.common.domian.MessageObject;
-import com.java.metaconsumer.config.RocketMqBizConstant;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.rocketmq.spring.annotation.RocketMQMessageListener;
 import org.apache.rocketmq.spring.core.RocketMQLocalRequestCallback;
@@ -14,10 +14,10 @@ import java.util.concurrent.TimeUnit;
  * 消费监听器
  */
 @Slf4j
-@Component
+//@Component
 @RocketMQMessageListener(
         topic = RocketMqBizConstant.ASYNC_SOURCE_TOPIC,
-        consumerGroup = RocketMqBizConstant.SOURCE_GROUP,
+        consumerGroup = RocketMqBizConstant.ASYNC_SOURCE_GROUP,
         selectorExpression = RocketMqBizConstant.ASYNC_SOURCE_TAG
 )
 public class RocketMessageLocalRequestCallbackListener implements RocketMQLocalRequestCallback<MessageObject> {

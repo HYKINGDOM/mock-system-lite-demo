@@ -1,12 +1,11 @@
 package com.java.metaconsumer.listener;
 
 import com.alibaba.fastjson.JSONObject;
-import com.java.metaconsumer.config.RocketMqBizConstant;
+import com.java.meta.common.constant.RocketMqBizConstant;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.rocketmq.client.consumer.DefaultMQPushConsumer;
 import org.apache.rocketmq.spring.annotation.RocketMQMessageListener;
 import org.apache.rocketmq.spring.core.RocketMQPushConsumerLifecycleListener;
-import org.springframework.stereotype.Component;
 
 import java.util.concurrent.TimeUnit;
 
@@ -17,7 +16,7 @@ import java.util.concurrent.TimeUnit;
 //@Component
 @RocketMQMessageListener(
         topic = RocketMqBizConstant.PUSH_SOURCE_TOPIC,
-        consumerGroup = RocketMqBizConstant.SOURCE_GROUP,
+        consumerGroup = RocketMqBizConstant.PUSH_SOURCE_GROUP,
         selectorExpression = RocketMqBizConstant.PUSH_SOURCE_TAG
 )
 public class RocketMQMessageConsumerLifecycleListener implements RocketMQPushConsumerLifecycleListener {

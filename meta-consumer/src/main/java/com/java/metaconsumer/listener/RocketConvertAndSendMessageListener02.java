@@ -1,8 +1,7 @@
 package com.java.metaconsumer.listener;
 
 import com.alibaba.fastjson.JSONObject;
-import com.java.metaconsumer.config.RocketMqBizConstant;
-import com.java.metaconsumer.config.RocketMqMessage;
+import com.java.meta.common.constant.RocketMqBizConstant;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.rocketmq.common.message.Message;
 import org.apache.rocketmq.spring.annotation.RocketMQMessageListener;
@@ -14,7 +13,6 @@ import java.util.concurrent.TimeUnit;
  * 相同实体类消费监听器
  * 同一个topic和tag可以有多个监听器，相当于同一个group下的消费者集群
  * 消息只会被其中一个进行消费
- *
  */
 @Slf4j
 // @Component

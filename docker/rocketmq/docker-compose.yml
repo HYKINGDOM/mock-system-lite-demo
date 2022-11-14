@@ -19,6 +19,8 @@ services:
   rocketmq-broker:
     depends_on:
       - rocketmq-name-server
+    links:
+      - rocketmq-name-server
     image: rocketmqinc/rocketmq
     container_name: rocketmq-broker
     volumes:
@@ -40,6 +42,8 @@ services:
     depends_on:
       - rocketmq-name-server
       - rocketmq-broker
+    links:
+      - rocketmq-name-server
     image: pangliang/rocketmq-console-ng
     container_name: rocketmq-admin
     environment:

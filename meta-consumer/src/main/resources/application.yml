@@ -13,7 +13,7 @@ server:
 
 rocketmq:
     # 多个NameServer，host:port;host:port，RocketMQProperties
-    name-server: 127.0.0.1:9876
+    name-server: 172.17.0.2:9876
     producer:
         # 发送同一类消息的设置为同一个group，保证唯一
         group: spring_boot_producer_group
@@ -44,6 +44,9 @@ rocketmq:
             rocketmq_source_code_group:
                 # value：{key: topic名称: value: true/false}
                 rocketmq_source_code: true
+                rocketmq_sync_send_message_group: true
+                rocketmq_async_send_message_group : true
+                rocketmq_push_send_message_group: true
         # 指定消费组
         group: spring_boot_consumer_group
         # 指定topic，启动时就会注册

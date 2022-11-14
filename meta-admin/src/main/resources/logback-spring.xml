@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <configuration scan="true" scanPeriod="10 seconds">
 	<property name="log.path" value="./logs/"/>
-	<property name="app.name" value="msg-center"/>
+	<property name="app.name" value="meta-admin"/>
 	<property name="log.queueSize" value="1024" />
 	<property name="log.neverBlock" value="true" />
 
