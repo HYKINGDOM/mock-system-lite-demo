@@ -56,6 +56,7 @@ public class RocketMqProduce {
         log.info("destination = {},syncSend sendStatus = {}", destination, JSONObject.toJSON(result));
     }
 
+
     /**
      * 异步消息
      *
