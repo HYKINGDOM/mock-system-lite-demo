@@ -8,6 +8,9 @@ import static com.java.meta.common.constant.CommonConstant.DEFAULT_TRACE_ID;
 public class TraceIdUtil {
 
 
+    public static final String DEFAULT_TRACE_ID = "traceId";
+
+
     /**
      * 根据入参设置traceId
      *

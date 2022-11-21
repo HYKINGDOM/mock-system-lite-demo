@@ -2,6 +2,7 @@ package com.java.metaadmin.producer;
 
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
+import com.java.meta.common.util.TraceIdUtil;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.rocketmq.client.producer.SendCallback;
@@ -33,10 +34,11 @@ public class RocketMqProduce {
     public void convertAndSend(String topic, String tag, Object object) {
         String destination = topic + ":" + tag;
 
-        Message<Object> buildMessage = MessageBuilder.withPayload(object).build();
-        // 在header重视设置traceID
+        Message<Object> buildMessage = MessageBuilder.withPayload(object)
+                // 在header重视设置traceID
+                .setHeader(TraceIdUtil.DEFAULT_TRACE_ID,TraceIdUtil.getTraceId()).build();
 
-        rocketMessageTemplate.convertAndSend(destination, object);
+        rocketMessageTemplate.convertAndSend(destination, buildMessage);
         log.info("destination = {},convertAndSend", destination);
     }
 
@@ -54,6 +56,11 @@ public class RocketMqProduce {
 
         SendResult result = rocketMessageTemplate.syncSend(destination, object, timeout);
         log.info("destination = {},syncSend sendStatus = {}", destination, JSONObject.toJSON(result));
+    }
+
+
+    public void sendAndReceive(String topic, String tag, Object object){
+
     }
 
 

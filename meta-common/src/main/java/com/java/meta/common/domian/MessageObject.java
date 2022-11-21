@@ -24,8 +24,5 @@ public class MessageObject {
 
     private LocalDateTime currentDateTime;
 
-
-
-
 }
 
