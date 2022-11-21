@@ -1,0 +1,52 @@
+version: "3.8"
+services:
+  filebeat:
+    container_name: filebeat
+    image: elastic/filebeat:${ELK_VERSION}
+    volumes:
+      - ./config/filebeat:/usr/share/filebeat
+      - ./logs/filebeat:/usr/share/filebeat/logs
+    command: /bin/bash -c 'export PATH=$PATH:/usr/share/filebeat && /usr/local/bin/docker-entrypoint -e'
+    environment:
+      - "TZ=Asia/Shanghai"
+    privileged: true
+    ports:
+      - "3339:3306"
+    depends_on:
+      - elasticsearch
+    network_mode: bridge
+
+  elasticsearch:
+    image: elasticsearch:${ELK_VERSION}
+    container_name: elasticsearch
+    ports:
+      - "9200:9200"
+      - "127.0.0.1:9300:9300"
+    restart: always
+    privileged: true
+    environment:
+      - TZ=Asia/Shanghai
+      - discovery.type=single-node
+      - bootstrap.memory_lock=true
+      #- "ES_JAVA_OPTS=-Xms4g -Xmx4g"
+    volumes:
+      - ./config/elasticsearch:/usr/share/elasticsearch/config
+      - ./data/elasticsearch:/usr/share/elasticsearch/data
+      - ./logs/elasticsearch:/usr/share/elasticsearch/logs
+    network_mode: bridge
+
+  kibana:
+    depends_on:
+      - elasticsearch
+    image: kibana:${ELK_VERSION}
+    container_name: kibana
+    ports:
+      - "5601:5601"
+    restart: always
+    privileged: true
+    environment:
+      - discovery.type=single-node
+      - elasticsearch.hosts=192.168.31.154:9200
+    volumes:
+      - ./config/kibana/:/usr/share/kibana/config
+    network_mode: bridge
