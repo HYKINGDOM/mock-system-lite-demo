@@ -2,7 +2,40 @@ filebeat.inputs:
   - type: log
     enabled: true
     paths:
-      - /usr/share/filebeat/logs/*
+      - F:\NewProject\java-util\logs\*.log
+    fields:
+       type: schedule-service-dev #输出的index索引
 
 output.elasticsearch:
   hosts: ["192.168.31.154:9200"]
+
+
+
+
+##filebeat.inputs:
+#- type: log
+#  enabled: true
+#  paths:
+#     - /var/logs/xxxxx-service/info.log #修改为对应服务的日志地址
+#  fields:
+#     type: xxxxx-service-dev #输出的index索引
+#- type: log
+#  enabled: true
+#  paths:
+#     - /var/logs/yyyyyy-service/info*.log
+#  fields:
+#     type: yyyyyy-service-dev
+#setup.template.settings:
+#  index.number_of_shards: 1
+#filebeat.config.modules:
+#  path: ${path.config}/modules.d/*.yml
+#  reload.enabled: false
+#output.logstash:
+#  hosts: ["logstash_ip:5044"]
+#  ssl.certificate_authorities: ["/etc/filebeat/logstash-beats.crt"]
+#processors:
+#  - add_host_metadata:
+#      when.not.contains.tags: forwarded
+#  - add_cloud_metadata: ~
+#  - add_docker_metadata: ~
+#  - add_kubernetes_metadata: ~
