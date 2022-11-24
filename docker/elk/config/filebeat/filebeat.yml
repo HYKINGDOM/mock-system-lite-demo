@@ -2,12 +2,30 @@ filebeat.inputs:
   - type: log
     enabled: true
     paths:
-#      - F:\\NewProject\\java-util\\logs\\*.log
-      - /usr/share/filebeat/logs/*.log
+      - /usr/share/filebeat/logs/kscs-crm/*.log
     fields:
-       type: schedule-service-dev #输出的index索引
+       type: kscs-crm #输出的index索引
+    multiline.type: pattern
+    multiline.pattern: '^\d{4}'
+    multiline.negate: true
+    multiline.match: after
+    multiline.max_lines：:  500
+    tags: ['es']
 
-setup.kibana.host: "http://192.168.31.154:5601"
+  - type: log
+    enabled: true
+    paths:
+      - /usr/share/filebeat/logs/kscs-system/*.log
+    fields:
+       type: kscs-system #输出的index索引
+    multiline.type: pattern
+    multiline.pattern: '^\d{4}'
+    multiline.negate: true
+    multiline.match: after
+    multiline.max_lines：:  500
+    tags: ["es-java"]
+
+setup.kibana.host: "http://10.0.201.198:5601"
 setup.dashboards.enabled: true
 
 filebeat.config.modules:
@@ -19,14 +37,14 @@ filebeat.config.modules:
 
 
 output.elasticsearch:
-  hosts: ["192.168.31.154:9200"]
+  hosts: ["10.0.201.198:9200"]
   indices:
-    - index: "ai_api_dev_%{[agent.version]}-%{+yyyy.MM.dd}"
+    - index: "ai_nginx_%{[agent.version]}-%{+yyyy.MM.dd}"
       when.contains:
-        tags: "ai_api_dev"
-    - index: "ai_schedule_dev_%{[agent.version]}-%{+yyyy.MM.dd}"
+        tags: "nginx"
+    - index: "es-java-%{[agent.version]}-%{+yyyy.MM.dd}"
       when.contains:
-        tags: "ai_schedule_dev"
+        tags: "es-java"
 
 ##filebeat.inputs:
 #- type: log
