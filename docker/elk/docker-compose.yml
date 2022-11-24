@@ -21,11 +21,13 @@ services:
     image: elastic/filebeat:${ELK_VERSION}
     volumes:
       - ./config/filebeat/filebeat.yml:/usr/share/filebeat/filebeat.yml
-      - ./logs/filebeat:/usr/share/filebeat/logs
+#      - ./logs/filebeat:/usr/share/filebeat/logs
+      - F:/NewProject/java-util/logs/:/usr/share/filebeat/logs
+#    command: /bin/bash -c "/usr/share/filebeat modules enable elasticsearch"
 #    command: /bin/bash -c 'export PATH=$PATH:/usr/share/filebeat && /usr/local/bin/docker-entrypoint -e'
-    command:
-      - 'ls'
-      - 'chmod 755 /usr/share/filebeat/filebeat.yml'
+#    command:  chmod -rwxrwxrwx filebeat.yml
+#      - 'ls'
+#      - 'chmod 755 /usr/share/filebeat/filebeat.yml'
     environment:
       - "SELINUX=permissive"
       - "SELINUXTYPE=targeted"
