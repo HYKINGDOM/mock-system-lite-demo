@@ -39,3 +39,6 @@ body
 updating [index.highlight.max_analyzed_offset] from [1000000] to [999999999]
 
 ```
+
+
+ES yellow 状态 执行ES.postman_collection.json中的请求
