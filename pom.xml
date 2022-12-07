@@ -49,6 +49,7 @@
         <module>meta-consumer</module>
         <module>meta-log</module>
         <module>meta-eureka</module>
+        <module>meta-crm</module>
     </modules>
 
     <dependencies>
