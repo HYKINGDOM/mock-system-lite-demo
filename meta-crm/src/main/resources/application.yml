@@ -5,10 +5,12 @@ spring:
         nacos:
             discovery:
                 namespace: public
+                server-addr: 127.0.0.1:8848
                 password: nacos
-                server-addr: mse-6d50f4f0-p.nacos-ans.mse.aliyuncs.com:8848
                 username: nacos
-eureka:
+
+    autoconfigure:
+        exclude: org.springframework.cloud.client.serviceregistry.AutoServiceRegistrationAutoConfiguration,org.springframework.cloud.client.serviceregistry.ServiceRegistryAutoConfiguration
     client: #客户端注册进eureka服务列表内
         service-url:
             defaultZone: http://localhost:7001/eureka
@@ -17,3 +19,7 @@ eureka:
     instance:
         instance-id: ${spring.application.name}:${server.port}
         prefer-ip-address: true     #访问路径可以显示IP地址
+
+server:
+    port: 8081
+

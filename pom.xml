@@ -27,8 +27,8 @@
         <spring-boot-starter-test>2.7.2</spring-boot-starter-test>
         <spring-boot-starter-aop>2.7.2</spring-boot-starter-aop>
 
-<!--        <spring-boot.version>2.2.5.RELEASE</spring-boot.version>-->
-        <spring-boot.version>2.7.2</spring-boot.version>
+        <spring-boot.version>2.2.5.RELEASE</spring-boot.version>
+<!--        <spring-boot.version>2.7.2</spring-boot.version>-->
         <spring-cloud.version>Hoxton.SR3</spring-cloud.version>
         <!-- Maven Plugin Versions -->
         <maven-compiler-plugin.version>3.8.1</maven-compiler-plugin.version>
