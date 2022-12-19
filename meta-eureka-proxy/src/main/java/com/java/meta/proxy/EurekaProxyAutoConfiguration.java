@@ -4,8 +4,8 @@ import com.alibaba.nacos.api.NacosFactory;
 import com.alibaba.nacos.api.exception.NacosException;
 import com.alibaba.nacos.api.naming.NamingMaintainService;
 import com.alibaba.nacos.api.naming.NamingService;
-import net.nacos.eureka.sync.EurekaSynchronizer;
-import net.nacos.eureka.sync.NacosSynchronizer;
+import com.java.meta.proxy.sync.EurekaSynchronizer;
+import com.java.meta.proxy.sync.NacosSynchronizer;
 import com.netflix.eureka.registry.PeerAwareInstanceRegistry;
 import org.springframework.boot.autoconfigure.AutoConfigureAfter;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
@@ -21,7 +21,7 @@ import org.springframework.context.annotation.Import;
 @AutoConfigureAfter({AutoServiceRegistrationConfiguration.class,
         AutoServiceRegistrationAutoConfiguration.class, PeerAwareInstanceRegistry.class})
 @Import({EurekaSynchronizer.class, NacosSynchronizer.class})
-@ComponentScan("net.nacos.eureka")
+@ComponentScan("com.java.meta.proxy")
 public class EurekaProxyAutoConfiguration {
 
     @Bean

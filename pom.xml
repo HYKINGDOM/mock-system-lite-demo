@@ -50,6 +50,7 @@
         <module>meta-log</module>
         <module>meta-eureka</module>
         <module>meta-crm</module>
+        <module>meta-eureka-proxy</module>
     </modules>
 
     <dependencies>
@@ -119,11 +120,11 @@
             <version>31.1-jre</version>
         </dependency>
 
-        <dependency>
-            <groupId>com.alibaba.fastjson2</groupId>
-            <artifactId>fastjson2</artifactId>
-            <version>2.0.20</version>
-        </dependency>
+<!--        <dependency>-->
+<!--            <groupId>com.alibaba.fastjson2</groupId>-->
+<!--            <artifactId>fastjson2</artifactId>-->
+<!--            <version>2.0.20</version>-->
+<!--        </dependency>-->
 
 
     </dependencies>
