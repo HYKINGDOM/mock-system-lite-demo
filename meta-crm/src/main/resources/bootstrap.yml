@@ -1,8 +1,33 @@
 spring:
+    application:
+      name: meta-crm
+    profiles:
+      active: dev
     cloud:
         nacos:
-            config:
-                namespace: public
-                server-addr: localhost:8848
-                password: nacos
-                username: nacos
+          discovery:
+            server-addr: localhost:8848
+            contextPath: /nacos
+            password: nacos
+            username: nacos
+          config:
+            server-addr: localhost:8848
+            file-extension: yml
+            refresh-enabled: true
+            auto-refresh: true
+            enable-remote-sync-config: true
+            extension-configs:
+              - data-id: meta-crm.yml
+                refresh: true
+#            shared-configs:
+#              - $(spring.application.name}-$(spring.profiles.active}.$spring.cloud.nacos.config.file-extension}
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+
+
+server:
+  port: 8081
